@@ -1,0 +1,63 @@
+﻿<Window x:Class="MemoryGame.wndGuess"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MemoryGame"
+        mc:Ignorable="d"
+        Title="Guess" Height="276" Width="260">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="15*"/>
+			<RowDefinition Height="89*"/>
+			<RowDefinition Height="90*"/>
+			<RowDefinition Height="37*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="103*"/>
+			<ColumnDefinition Width="164*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.Resources>
+			<Style BasedOn="{StaticResource {x:Type ToggleButton}}" 
+					TargetType="RadioButton">
+				<Setter Property="Width" Value="20" />
+				<Setter Property="Height" Value="20" />
+				<Setter Property="Margin" Value="5" />
+			</Style>
+		</Grid.Resources>
+		<Image Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Margin="5"
+			VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+			x:Name="imMain"/>
+		<TextBlock Grid.Row="0" Grid.Column="1">
+			Where did you see it?
+		</TextBlock>
+		<GroupBox Grid.Row="1" Grid.Column="1" 
+			          x:Name="gbFirst" Header="First occurence" Margin="5">
+			<WrapPanel Orientation="Horizontal" x:Name="wpFirst" >
+				<RadioButton x:Name="rbFirs00" />
+				<RadioButton x:Name="rbFirs01" />
+				<RadioButton x:Name="rbFirs02" />
+				<RadioButton x:Name="rbFirs03" />
+				<RadioButton x:Name="rbFirs10" />
+				<RadioButton x:Name="rbFirs11" />
+				<RadioButton x:Name="rbFirs12" />
+				<RadioButton x:Name="rbFirs13" />
+			</WrapPanel>
+		</GroupBox>
+		<GroupBox Grid.Row="2" Grid.Column="1" 
+							x:Name="gbSecond" Header="Second occurence" Margin="5">
+			<WrapPanel Orientation="Horizontal" x:Name="wpSecond">
+				<RadioButton x:Name="rbSecond00" />
+				<RadioButton x:Name="rbSecond01" />
+				<RadioButton x:Name="rbSecond02" />
+				<RadioButton x:Name="rbSecond03" />
+				<RadioButton x:Name="rbSecond10" />
+				<RadioButton x:Name="rbSecond11" />
+				<RadioButton x:Name="rbSecond12" />
+				<RadioButton x:Name="rbSecond13" />
+			</WrapPanel>
+		</GroupBox>
+		<Button x:Name="btOK" Content="OK" Grid.Row="3"
+						Grid.Column="1" Click="btOK_Click" Margin="5" />
+	</Grid>
+</Window>
